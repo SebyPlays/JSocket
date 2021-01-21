@@ -7,7 +7,6 @@
 ```
 -
 ## How does it work?
-
 ```
 The usage of this api may be a bit more complex in comparison to
 the other apis i 've been posting.
@@ -16,12 +15,10 @@ the other apis i 've been posting.
 ### Server Classes
 ```
 There are multiple types of servers, that require a different type of client.
-
-
 ```
 #### SimpleServer
-```The "SimpleServer" class is the foundation of every server.
-
+```
+The "SimpleServer" class is the foundation of every server.
 This class contains the basic functionality of a server,
 receiving and sending the packet. 
 after that, closing the socket.
@@ -43,12 +40,12 @@ public static void main(String[] args){
 ```
   The write() method will send the client a packet.
 ```
-
 -
 #### SimpleComplexServer
 ```
 At this point, things are getting more complex.
-The SimpleComplexServer works and implements the use of ComplexPackages.
+The SimpleComplexServer works and implements the use of ComplexPackages and
+multiple new methods.
 
 ComplexPackages are being utilized by the PacketHandler to contain ordered and quickly readable data in byte[].
 
@@ -67,7 +64,22 @@ public static void main(String[] args){
 ```
 -
 #### ComplexServer
+```
+The ComplexServer is the most difficult class in this list.
+This class adds the ability to connect with multiple clients 
+and send multiple packets at once.
 
-
+Each connected client is being set in a new ClassInstance in another Thread.
+```
+- Usage:
+```java
+public static void main(String[] args){
+  new ComplexServer(new Port(<int>)){
+    public void cserverContent(ServerSocket serverSocket, PacketHandler packetHandler, Packet packet){
+      //Do some stuff with the params
+    }
+  };
+}
+```
 
 Documentation is being continued <1/21/2021>
