@@ -1,2 +1,73 @@
 # JSocket
-A simple ServerSocket/Socket utilizer with packets and filetransfer 
+
+-
+## What is the JSocket API?
+```
+  Primarily the JSocket api is supposed to advance and simplify the usage of Sockets in java.
+```
+-
+## How does it work?
+
+```
+The usage of this api may be a bit more complex in comparison to
+the other apis i 've been posting.
+```
+
+### Server Classes
+```
+There are multiple types of servers, that require a different type of client.
+
+
+```
+#### SimpleServer
+```The "SimpleServer" class is the foundation of every server.
+
+This class contains the basic functionality of a server,
+receiving and sending the packet. 
+after that, closing the socket.
+```
+
+- Usage:
+```java
+public static void main(String[] args){
+  SimpleServer simpleServer = new SimpleServer(new Port(<int>));
+  //do some stuff with the read and write packets.
+}
+```
+##### read() Method:
+```
+  The read() method returns the clients send packet as a string.
+```
+
+##### write() Method:
+```
+  The write() method will send the client a packet.
+```
+
+-
+#### SimpleComplexServer
+```
+At this point, things are getting more complex.
+The SimpleComplexServer works and implements the use of ComplexPackages.
+
+ComplexPackages are being utilized by the PacketHandler to contain ordered and quickly readable data in byte[].
+
+If a package comes in, the current data of the server is being passed to the 
+serverContents method parameters.
+```
+- Usage:
+```java
+public static void main(String[] args){
+    new SimpleComplexServer(new Port(<int>)){
+      public void serverContent(ServerSocket serverSocket, PacketHandler packetHandler, Packet packet){
+        //do some stuff with the passed information;
+      }
+    };
+}
+```
+-
+#### ComplexServer
+
+
+
+Documentation is being continued <1/21/2021>
