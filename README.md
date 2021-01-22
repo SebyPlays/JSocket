@@ -40,6 +40,11 @@ public static void main(String[] args){
 ```
   The write() method will send the client a packet.
 ```
+
+##### terminate() method:
+```
+The terminate() method is obviously terminating the connection between client and server.
+```
 -
 #### SimpleComplexServer
 ```
@@ -51,6 +56,8 @@ ComplexPackages are being utilized by the PacketHandler to contain ordered and q
 
 If a package comes in, the current data of the server is being passed to the 
 serverContents method parameters.
+
+all methods from the SimpleServer class have been inherited.
 ```
 - Usage:
 ```java
@@ -62,6 +69,20 @@ public static void main(String[] args){
     };
 }
 ```
+##### writePacket() method:
+```
+The writePacket() method utilizes the basic write() method to send packets in a specific format and in bytes.
+```
+##### readPacket() method:
+```
+The readPacket() method utilizes the basic read() method to read packets in a specific format and in bytes.
+```
+
+##### writePacketNoCallback() method:
+```
+the writePacketNoCallback() method is sending a packet without expecting a response.
+``` 
+
 -
 #### ComplexServer
 ```
