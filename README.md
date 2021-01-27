@@ -102,5 +102,34 @@ public static void main(String[] args){
   };
 }
 ```
+-
+#### FileServer
+```
+The FileServer is the most different and only server class, 
+that does not inherit from the other ServerClasses due to compatibility issues.
+So, the fileserver type is separated from the other server types.
+```
+- Usage:
+```java
+public static void main(String[] args){
+  FileServer fileServer = new FileServer(new Port(<int>));
+  fileServer.receiveFile(String fileName);
+  fileServer.terminate();
+}
+```
+##### receiveFile(String fileName) method:
+```
+The receiveFile(<fileName>); method, is basically just there for building the DataInputStream to a file.
+The only parameter is the name, the file should have after output.
+
+Pretty much selfexplanatory.
+```
+
+##### terminate() method:
+```
+The terminate(); method disconnects the client and closes the server.
+```
+
+### Client Classes:
 
 Documentation is being continued <1/21/2021>
