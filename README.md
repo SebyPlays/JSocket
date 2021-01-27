@@ -132,4 +132,16 @@ The terminate(); method disconnects the client and closes the server.
 
 ### Client Classes:
 
+-
+#### SimpleClient
+```
+The SimpleClient Class is the ClientForm equivalent to the SimpleServer.
+It consists of the main functionality of every other client inheriting this class. e.g. ComplexClient.
+```
+
+- Usage:
+```java
+public static void main(String[] args){
+  SimpleClient simpleClient = new SimpleClient();
+}
 Documentation is being continued <1/21/2021>
