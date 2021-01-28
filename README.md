@@ -187,5 +187,56 @@ public static void main(String[] args){
 }
 ```
 
+#### FileClient(<String(host)>, <Port>):
+  
+```
+The FileClient(<>,<>) class is completely separated from any other client class and has no
+inheritance at all.
+
+The FileClient is the complete opposite of the FileServer.
+This classes constructor requires two parameters, the server details.
+```
+- Usage:
+```java
+public static void main(String[] args){
+  FileClient fileClient = new FileClient("127.0.0.1", new Port(2141));
+  fileClient.sendFile(String path);
+  fileClient.terminate();
+}
+```
+##### sendFile(String path) method:
+```
+The sendFile(String path) method is (obviously) for sending a file to the FileServer.
+```
+
+### Packet Classes
+```
+The Packet classes are either for handeling, directing, or the Datatype itself.
+Packets contain all the information that is being sent back and forth. 
+```
+#### Packet
+```
+The Packet class itself is the raw datatype, that contains all information. 
+this class and these informations can be processed and contructed through the PacketHandler class.
+```
+
+#### PacketHandler
+```
+The PacketHandler class is utilizing the Packet class and 
+reads, translates, redirects and writes information
+into/from a packet
+```
+##### constructPacket(<Socket>, <String>) method:
+
+```
+the constructPacket(<Socket>, <String>) method is obviously constructing and returning a packet.
+all information provided in the parameters are required to have a big variety of possibilities to
+handle a packet
+```
+
+##### destructPacket(<Packet>) method:
+
+```
+the   
 
 Documentation is being continued <1/21/2021>
