@@ -143,5 +143,11 @@ It consists of the main functionality of every other client inheriting this clas
 ```java
 public static void main(String[] args){
   SimpleClient simpleClient = new SimpleClient();
+  simpleClient.connect(<host>, <port>);
+  simpleClient.sendBasicPacket("This is some rando packet info");
+  simpleClient.terminate();
 }
+```
+
+##### 
 Documentation is being continued <1/21/2021>
