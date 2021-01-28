@@ -149,5 +149,43 @@ public static void main(String[] args){
 }
 ```
 
-##### 
+##### connect(<host>, <port>) method:
+
+```
+The connect(<host>,<port>) method requires 2 parameters. in this case a host and a port.
+This method is connecting the client to the server.
+```
+##### sendBasicPacket(<String>) method:
+
+```
+The sendBasicPacket(<String>) method is simply sending information to the server the client is connected to.
+```
+
+##### sendBasicPacketNoCallBack(<String>) method:
+
+```
+The sendBasicPacketNoCallBack(<String>) method is the same as the "sendBasicPacket(<String>)" method, with the only
+difference, that this method isn't expecting anything, so it isn't returning anything.
+```
+
+#### ComplexClient:
+```
+The ComplexClient class is inheriting all methods from the SimpleClient Class, so
+everything mentioned above is applying to this class too with some differences.
+```
+- Usage:
+```java
+public static void main(String[] args){
+  ComplexClient complexClient = new ComplexClient(){
+    public void clientContent(Packet packet){
+      //do sth. with the received packets..
+    }
+  };
+  complexClient.connect("127.0.0.1", new Port(2141));
+  complexClient.sendComplexPacket(new PacketHandler().constructPacket(complexClient.getSocket(), "Packet information"));
+  complexClient.disconnect();
+}
+```
+
+
 Documentation is being continued <1/21/2021>
