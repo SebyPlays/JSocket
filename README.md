@@ -237,6 +237,6 @@ handle a packet
 ##### destructPacket(<Packet>) method:
 
 ```
-the   
+the destructPacket(<Packet>) method is returning a String[] array which consists of the packet's info content.
+```
 
-Documentation is being continued <1/21/2021>
